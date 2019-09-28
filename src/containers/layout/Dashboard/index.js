@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import './style.css';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 import pageRoutes from '../../../config/router';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -26,12 +26,14 @@ const Dashboard = () => {
         collapsed={collapsed}
         onCollapse={onCollapse}>
         <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['0']}>
           {pageRoutes.map((data, i) => {
             return (
               <Menu.Item key={i}>
-                <Icon type={data.icon} />
-                <span className="nav-text">{data.name}</span>
+                <Link to={data.link}>
+                  <Icon type={data.icon} />
+                  <span className="nav-text">{data.name}</span>
+                </Link>
               </Menu.Item>
             );
           })}
@@ -42,17 +44,11 @@ const Dashboard = () => {
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
             <Switch>
-              <Route path="/" component={() => <h1>Ini Root</h1>} exact />
-              <Route
-                path="/contact"
-                component={() => <h1>Ini Halaman Contact</h1>}
-                exact
-              />
-              <Route
-                path="/about"
-                component={() => <h1>Ini Halaman About</h1>}
-                exact
-              />
+              {pageRoutes.map((data, i) => {
+                return (
+                  <Route path={data.path} component={data.component} exact />
+                );
+              })}
             </Switch>
           </div>
         </Content>
