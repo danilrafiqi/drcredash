@@ -1,15 +1,16 @@
 import About from '../../containers/pages/About';
 import Contact from '../../containers/pages/Contact';
 import Home from '../../containers/pages/Home';
+import TableRedash from '../../containers/pages/table';
 
 const pageRoutes = () => {
   return [
     {
-      path: '/about',
-      link: '/about',
+      path: '/table',
+      link: '/table',
       icon: 'user',
-      name: 'Navigasi About',
-      component: About
+      name: 'Table',
+      component: TableRedash
     },
     {
       path: '/contact',
