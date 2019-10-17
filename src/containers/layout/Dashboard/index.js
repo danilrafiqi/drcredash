@@ -17,10 +17,7 @@ const Dashboard = () => {
     <Layout>
       <Sider
         style={{
-          overflow: 'auto',
           height: '100vh',
-          position: 'fixed',
-          left: 0
         }}
         collapsible
         collapsed={collapsed}
@@ -39,7 +36,7 @@ const Dashboard = () => {
           })}
         </Menu>
       </Sider>
-      <Layout style={{ marginLeft: 200 }}>
+      <Layout>
         <Header style={{ background: '#fff', padding: 0 }} />
         <Content style={{ margin: '24px 16px 0', overflow: 'initial' }}>
           <div style={{ padding: 24, background: '#fff', textAlign: 'center' }}>
