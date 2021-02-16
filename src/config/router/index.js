@@ -1,5 +1,3 @@
-import About from '../../containers/pages/About';
-import Contact from '../../containers/pages/Contact';
 import Home from '../../containers/pages/Home';
 import TableRedash from '../../containers/pages/table';
 import Chart from '../../containers/pages/chart';
